@@ -1,0 +1,9 @@
+apiVersion: community.devops.org.pt/v1
+kind: DevOpsNaPraia
+metadata:
+  labels:
+    app.kubernetes.io/name: devopsnapraia-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: devopsnapraia-sample
+spec:
+  # TODO(user): Add fields here
