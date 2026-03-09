@@ -30,9 +30,11 @@ type DevOpsNaPraiaSpec struct {
 	// The following markers will use OpenAPI v3 schema to validate the value
 	// More info: https://book.kubebuilder.io/reference/markers/crd-validation.html
 
-	// foo is an example field of DevOpsNaPraia. Edit devopsnapraia_types.go to remove/update
-	// +optional
-	Foo *string `json:"foo,omitempty"`
+	// talks is the title of the talks
+	Talks []string `json:"talks,omitempty"`
+	// address is where we put the location of the meetup
+	// +kubebuilder:default:="Ed. Transparente – Matosinhos"
+	Address string `json:"address,omitempty"`
 }
 
 // DevOpsNaPraiaStatus defines the observed state of DevOpsNaPraia.
