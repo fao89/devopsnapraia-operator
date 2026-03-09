@@ -1,11 +1,39 @@
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  labels:
-    app.kubernetes.io/name: devopsnapraia-operator
-    app.kubernetes.io/managed-by: kustomize
   name: manager-role
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get", "list", "watch"]
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - community.devops.org.pt
+  resources:
+  - devopsnapraia
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - community.devops.org.pt
+  resources:
+  - devopsnapraia/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - community.devops.org.pt
+  resources:
+  - devopsnapraia/status
+  verbs:
+  - get
+  - patch
+  - update
