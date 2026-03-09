@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- community_v1_devopsnapraia.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples
